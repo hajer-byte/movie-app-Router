@@ -54,7 +54,9 @@ function App() {
         <Route exact path="/" />
         <Route
           path="/movie/:id"
-          render={(props) => <DescPage {...props} movie={movie} />}
+          render={(props) => (
+            <DescPage {...props} setMovie={setMovie} movie={movie} />
+          )}
         />
         <div className="app">
           <Title />
