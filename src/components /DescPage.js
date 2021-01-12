@@ -12,13 +12,13 @@ const DescPage = ({ movie }) => {
         <Card.Body>
           <Card.Title> {moviee && moviee.title} </Card.Title>
           <Iframe
+            url={moviee && moviee.trailer}
             width="200px"
             height="200px"
             id="myId"
             className=""
             display="initial"
             position="relative"
-            src={moviee && moviee.trailer}
           />
           <Card.Text>{moviee && moviee.description}</Card.Text>
           <button
