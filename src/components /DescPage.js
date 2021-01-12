@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Iframe from "react-iframe";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
-
 const DescPage = ({ movie }) => {
+  const { id } = useParams();
+  const moviee = movie.find((el) => el.id == id);
   return (
     <div className="container">
       <Card style={{ width: "600px", height: "500px" }}>
         <Card.Header as="h5">Movie details</Card.Header>
         <Card.Body>
-          <Card.Title> {movie.map((el) => movie.id === el.id)} </Card.Title>
+          <Card.Title> {moviee && moviee.title} </Card.Title>
           <Iframe
             width="200px"
             height="200px"
@@ -17,8 +18,9 @@ const DescPage = ({ movie }) => {
             className=""
             display="initial"
             position="relative"
+            src={moviee && moviee.trailer}
           />
-          <Card.Text className="description"></Card.Text>
+          <Card.Text>{moviee && moviee.description}</Card.Text>
           <button
             variant="primary"
             className="text-decoration-none btn btn-warning ml-5 mt-2"
@@ -31,5 +33,4 @@ const DescPage = ({ movie }) => {
     </div>
   );
 };
-
 export default DescPage;
