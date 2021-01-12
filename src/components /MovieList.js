@@ -17,3 +17,7 @@ const MovieList = ({ movielist, handleAdd }) => {
 };
 
 export default MovieList;
+/*let wantedMovie = movies.find(el => match.params.id === el.id)
+let wantedMovie = movies.find(el => match.params.id === el.id)
+<Link to={`/movie/${el.id}`}>
+*/

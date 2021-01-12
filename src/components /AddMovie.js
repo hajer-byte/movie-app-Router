@@ -3,16 +3,7 @@ import Modal from "react-modal";
 import StarRating from "./StarRating";
 import "../index.css";
 import { Button } from "antd";
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+
 Modal.setAppElement("#root");
 function AddMovie({ addMovie }) {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -43,7 +34,8 @@ function AddMovie({ addMovie }) {
         style={{
           backgroundColor: "darkgrey",
           border: "2px solid darkgrey",
-          width: "8rem",
+          width: "7rem",
+          marginTop: "5rem",
         }}
         type="primary"
         onClick={openModal}
